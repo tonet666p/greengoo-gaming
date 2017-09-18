@@ -1,0 +1,19 @@
+.center {
+    text-align: center;
+}
+.right {
+   text-align: right;
+}
+body{
+	background-color: #3C4E42;
+	color: white;
+}
+ul, ol{
+	list-style-position: inside;
+}
+.col-md-4 h4{
+	padding-top: 80px;
+}
+.col-md-4 .logo{
+	padding-top: 50px;
+}
