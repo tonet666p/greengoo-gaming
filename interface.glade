@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkDialog" id="help_window">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Ayuda</property>
+    <property name="window_position">center</property>
+    <property name="type_hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Aceptar</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="onDialogExit" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Juega partidas de DOTA 2 con jugadores de Norte America,
+sigue los siguientes pasos:
+
+1. Abre GreenGoo Gaming.
+2. Clic en Conectarse.
+3. Abre Steam y DOTA 2.
+4. Busca una partida en EEUU Este y el idioma preferido Ingles.
+5. Cuando estés en la etapa de selección de heroe, vuelve a
+    GreenGoo Gaming y dale clic a Desconectarse (o jugaras
+    con latencia).
+6. Para buscar una nueva partida, cierra Steam y vuelve a
+    seguir los pasos.
+ 
+Disfruta el juego, se amable con los jugadores, demuestra
+que tambien tienes nivel.</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="main_window">
+    <property name="width_request">500</property>
+    <property name="height_request">260</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">GreenGoo Gaming Client</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="hide_titlebar_when_maximized">True</property>
+    <signal name="delete-event" handler="onDeleteWindow" swapped="no"/>
+    <child>
+      <object class="GtkFixed">
+        <property name="width_request">500</property>
+        <property name="height_request">260</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="help_button">
+            <property name="label" translatable="yes">Ayuda</property>
+            <property name="width_request">100</property>
+            <property name="height_request">40</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="onButtonPressed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">275</property>
+            <property name="y">184</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="exit_button">
+            <property name="label" translatable="yes">Salir</property>
+            <property name="width_request">100</property>
+            <property name="height_request">40</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="onDeleteWindow" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">382</property>
+            <property name="y">184</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage">
+            <property name="width_request">273</property>
+            <property name="height_request">100</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">horizontal.png</property>
+          </object>
+          <packing>
+            <property name="x">122</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="connect_switch">
+            <property name="width_request">157</property>
+            <property name="height_request">43</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <signal name="state-set" handler="onSwitchActivate" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">58</property>
+            <property name="y">158</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="status_label">
+            <property name="width_request">159</property>
+            <property name="height_request">21</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Desconectado</property>
+          </object>
+          <packing>
+            <property name="x">57</property>
+            <property name="y">131</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkProgressBar" id="countdown_progress">
+            <property name="width_request">159</property>
+            <property name="height_request">22</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="fraction">1</property>
+            <property name="text" translatable="yes">00:00</property>
+            <property name="show_text">True</property>
+            <property name="ellipsize">start</property>
+          </object>
+          <packing>
+            <property name="x">56</property>
+            <property name="y">228</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width_request">260</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Desarrollado por TNT. tonet666p@gmail.com.</property>
+          </object>
+          <packing>
+            <property name="x">238</property>
+            <property name="y">234</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width_request">163</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Tiempo restante:</property>
+          </object>
+          <packing>
+            <property name="x">56</property>
+            <property name="y">206</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

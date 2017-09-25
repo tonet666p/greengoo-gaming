@@ -49,9 +49,10 @@ class RouterosAPI
      */
     public function debug($text)
     {
-        if ($this->debug) {
-            echo $text . "\n";
-        }
+        return 0;
+        //if ($this->debug) {
+        //    echo $text . "\n";
+        //}
     }
 
 
